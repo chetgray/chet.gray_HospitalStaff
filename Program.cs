@@ -8,6 +8,53 @@ namespace HospitalStaff
     {
         static void Main()
         {
+            List<IHospitalWorker> staff = InitializeStaff();
+
+            foreach (IHospitalWorker worker in staff)
+            {
+                Console.Write(
+                    $"Name: {worker.Name},\tID: {worker.EmployeeID},  Hire Date: {worker.HireDate}"
+                );
+                if (worker is IAttending attending)
+                {
+                    Console.Write(
+                        "  Type: Attending,"
+                            + $"\tSpecialty: {attending.Specialty},"
+                            + $"\tResidents: {attending.SuperviseesCount}"
+                    );
+                }
+                if (worker is IResident resident)
+                {
+                    Console.Write(
+                        $"  Type: Resident,\tAttending: {resident.Supervisor.Name}"
+                    );
+                }
+                if (worker is INurseSupervisor nurseSupervisor)
+                {
+                    Console.Write(
+                        $"  Type: Nurse Supervisor,\tNurses: {nurseSupervisor.SuperviseesCount}"
+                    );
+                }
+                if (worker is IRegisteredNurse registeredNurse)
+                {
+                    Console.Write(
+                        $"  Type: Registered Nurse,\tSupervisor: {registeredNurse.Supervisor.Name}"
+                    );
+                }
+                if (worker is ISurgicalTech surgicalTech)
+                {
+                    Console.Write(
+                        $"  Type: Surgical Tech,\tDepartment: {surgicalTech.Department}"
+                    );
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadKey(intercept: true);
+        }
+
+        private static List<IHospitalWorker> InitializeStaff()
+        {
             List<IHospitalWorker> staff = new List<IHospitalWorker>();
 
             staff.Add(new Attending { Name = "Richard Srini", EmployeeID = "D94B72E", HireDate = "1996-02-02", Specialty = "Ophthalmology" });
@@ -64,48 +111,7 @@ namespace HospitalStaff
             staff.Add(new SurgicalTech { Name = "Roth Vazquez", EmployeeID = "2D99F45", HireDate = "2021-08-10", Department = "Colon and Rectal Surgery" });
             staff.Add(new SurgicalTech { Name = "Aurelia Hanson", EmployeeID = "3EC9267", HireDate = "2019-12-12", Department = "Gynecologic Oncology" });
             staff.Add(new SurgicalTech { Name = "Zelenia Miranda", EmployeeID = "334877A", HireDate = "2020-01-04", Department = "Pediatric Surgery" });
-
-            foreach (IHospitalWorker worker in staff)
-            {
-                Console.Write(
-                    $"Name: {worker.Name},\tID: {worker.EmployeeID},  Hire Date: {worker.HireDate}"
-                );
-                if (worker is IAttending attending)
-                {
-                    Console.Write(
-                        "  Type: Attending,"
-                            + $"\tSpecialty: {attending.Specialty},"
-                            + $"\tResidents: {attending.SuperviseesCount}"
-                    );
-                }
-                if (worker is IResident resident)
-                {
-                    Console.Write(
-                        $"  Type: Resident,\tAttending: {resident.Supervisor.Name}"
-                    );
-                }
-                if (worker is INurseSupervisor nurseSupervisor)
-                {
-                    Console.Write(
-                        $"  Type: Nurse Supervisor,\tNurses: {nurseSupervisor.SuperviseesCount}"
-                    );
-                }
-                if (worker is IRegisteredNurse registeredNurse)
-                {
-                    Console.Write(
-                        $"  Type: Registered Nurse,\tSupervisor: {registeredNurse.Supervisor.Name}"
-                    );
-                }
-                if (worker is ISurgicalTech surgicalTech)
-                {
-                    Console.Write(
-                        $"  Type: Surgical Tech,\tDepartment: {surgicalTech.Department}"
-                    );
-                }
-                Console.WriteLine();
-            }
-
-            Console.ReadKey(intercept: true);
+            return staff;
         }
     }
 }
