@@ -20,6 +20,7 @@ namespace HospitalStaff
                 new Attending { Name = "Simon Bellamy", EmployeeID = "3B79DBB", HireDate = "2012-10-04", Specialty = "EmergencyMedicine" },
                 new Attending { Name = "Charde Ihemeje", EmployeeID = "39DDE44", HireDate = "2003-06-06", Specialty = "MedicalGenetics" }
             };
+
             staff.Add(new Resident { Name = "Abra Mendoza", EmployeeID = "956B46B", HireDate = "2022-07-29", SupervisingAttending = (Attending)staff[0] });
             staff.Add(new Resident { Name = "Christian Inacio", EmployeeID = "8ADF7A7", HireDate = "2020-12-18", SupervisingAttending = (Attending)staff[1] });
             staff.Add(new Resident { Name = "Robert Karagöz", EmployeeID = "829777A", HireDate = "2022-05-04", SupervisingAttending = (Attending)staff[1] });
@@ -30,6 +31,17 @@ namespace HospitalStaff
             staff.Add(new Resident { Name = "Giacomo Steiner", EmployeeID = "508E28B", HireDate = "2022-09-12", SupervisingAttending = (Attending)staff[3] });
             staff.Add(new Resident { Name = "Ezra Boer", EmployeeID = "533A9AE", HireDate = "2021-04-06", SupervisingAttending = (Attending)staff[1] });
             staff.Add(new Resident { Name = "Asher Little", EmployeeID = "139AF44", HireDate = "2021-09-13", SupervisingAttending = (Attending)staff[4] });
+
+            staff.Add(new NurseSupervisor { Name = "Audrey Moore", EmployeeID = "938C4A2", HireDate = "2005-06-24" });
+            staff.Add(new NurseSupervisor { Name = "Teegan İlhan", EmployeeID = "601611B", HireDate = "2005-08-09" });
+            staff.Add(new NurseSupervisor { Name = "Avram Chng", EmployeeID = "77B8691", HireDate = "2009-08-21" });
+            staff.Add(new NurseSupervisor { Name = "Garth Zhuo", EmployeeID = "8165B5D", HireDate = "2014-09-18" });
+            staff.Add(new NurseSupervisor { Name = "Quinn Franco", EmployeeID = "68B5EA9", HireDate = "2005-02-22" });
+            staff.Add(new NurseSupervisor { Name = "Aidan Cortes", EmployeeID = "BDD98F7", HireDate = "2008-12-01" });
+            staff.Add(new NurseSupervisor { Name = "Abra Meena", EmployeeID = "8B151D8", HireDate = "2005-07-25" });
+            staff.Add(new NurseSupervisor { Name = "Forrest Schuster", EmployeeID = "BD9DDE8", HireDate = "2018-01-17" });
+            staff.Add(new NurseSupervisor { Name = "Destiny Fonseca", EmployeeID = "91407D8", HireDate = "2021-01-10" });
+            staff.Add(new NurseSupervisor { Name = "Grant Dutta", EmployeeID = "3EA1784", HireDate = "2004-08-30" });
 
             foreach (IHospitalWorker worker in staff)
             {
@@ -46,6 +58,12 @@ namespace HospitalStaff
                 {
                     Console.Write(
                         $"  Type: Resident,\tAttending: {resident.SupervisingAttending.Name}"
+                    );
+                }
+                if (worker is NurseSupervisor nurseSupervisor)
+                {
+                    Console.Write(
+                        $"  Type: Nurse Supervisor,\tNurses: {nurseSupervisor.SupervisedNursesCount}"
                     );
                 }
                 Console.WriteLine();
