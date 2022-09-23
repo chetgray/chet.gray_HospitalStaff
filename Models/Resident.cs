@@ -9,7 +9,7 @@
             get { return _supervisingAttending; }
             set
             {
-                if (_supervisingAttending != null)
+                if (!(_supervisingAttending is null))
                 {
                     SupervisingAttending.SupervisedResidentsCount--;
                 }

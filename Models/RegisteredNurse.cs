@@ -9,7 +9,7 @@
             get { return _supervisingNurseSupervisor; }
             set
             {
-                if (_supervisingNurseSupervisor != null)
+                if (!(_supervisingNurseSupervisor is null))
                 {
                     SupervisingNurseSupervisor.SupervisedNursesCount--;
                 }
