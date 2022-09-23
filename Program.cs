@@ -23,25 +23,25 @@ namespace HospitalStaff
                             + $"\tResidents: {attending.SuperviseesCount}"
                     );
                 }
-                if (worker is IResident resident)
+                else if (worker is IResident resident)
                 {
                     Console.Write(
                         $"  Type: Resident,\tAttending: {resident.Supervisor.Name}"
                     );
                 }
-                if (worker is INurseSupervisor nurseSupervisor)
+                else if (worker is INurseSupervisor nurseSupervisor)
                 {
                     Console.Write(
                         $"  Type: Nurse Supervisor,\tNurses: {nurseSupervisor.SuperviseesCount}"
                     );
                 }
-                if (worker is IRegisteredNurse registeredNurse)
+                else if (worker is IRegisteredNurse registeredNurse)
                 {
                     Console.Write(
                         $"  Type: Registered Nurse,\tSupervisor: {registeredNurse.Supervisor.Name}"
                     );
                 }
-                if (worker is ISurgicalTech surgicalTech)
+                else if (worker is ISurgicalTech surgicalTech)
                 {
                     Console.Write(
                         $"  Type: Surgical Tech,\tDepartment: {surgicalTech.Department}"
