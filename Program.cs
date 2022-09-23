@@ -70,31 +70,31 @@ namespace HospitalStaff
                 Console.Write(
                     $"Name: {worker.Name},\tID: {worker.EmployeeID},  Hire Date: {worker.HireDate}"
                 );
-                if (worker is Attending attending)
+                if (worker is IAttending attending)
                 {
                     Console.Write(
                         $"  Type: Attending,\tResidents: {attending.SupervisedResidentsCount}"
                     );
                 }
-                if (worker is Resident resident)
+                if (worker is IResident resident)
                 {
                     Console.Write(
                         $"  Type: Resident,\tAttending: {resident.SupervisingAttending.Name}"
                     );
                 }
-                if (worker is NurseSupervisor nurseSupervisor)
+                if (worker is INurseSupervisor nurseSupervisor)
                 {
                     Console.Write(
                         $"  Type: Nurse Supervisor,\tNurses: {nurseSupervisor.SupervisedNursesCount}"
                     );
                 }
-                if (worker is RegisteredNurse registeredNurse)
+                if (worker is IRegisteredNurse registeredNurse)
                 {
                     Console.Write(
                         $"  Type: Registered Nurse,\tSupervisor: {registeredNurse.SupervisingNurseSupervisor.Name}"
                     );
                 }
-                if (worker is SurgicalTech surgicalTech)
+                if (worker is ISurgicalTech surgicalTech)
                 {
                     Console.Write(
                         $"  Type: Surgical Tech,\tDepartment: {surgicalTech.Department}"

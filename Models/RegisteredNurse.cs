@@ -1,6 +1,6 @@
 ﻿namespace HospitalStaff.Models
 {
-    internal class RegisteredNurse : HospitalWorker
+    internal class RegisteredNurse : HospitalWorker, IRegisteredNurse
     {
         private NurseSupervisor _supervisingNurseSupervisor;
 

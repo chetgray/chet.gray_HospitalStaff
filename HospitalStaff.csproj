@@ -45,7 +45,12 @@
   <ItemGroup>
     <Compile Include="Models\Attending.cs" />
     <Compile Include="Models\HospitalWorker.cs" />
+    <Compile Include="Models\IAttending.cs" />
     <Compile Include="Models\IHospitalWorker.cs" />
+    <Compile Include="Models\INurseSupervisor.cs" />
+    <Compile Include="Models\IRegisteredNurse.cs" />
+    <Compile Include="Models\IResident.cs" />
+    <Compile Include="Models\ISurgicalTech.cs" />
     <Compile Include="Models\NurseSupervisor.cs" />
     <Compile Include="Models\RegisteredNurse.cs" />
     <Compile Include="Models\Resident.cs" />

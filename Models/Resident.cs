@@ -1,6 +1,6 @@
 ﻿namespace HospitalStaff.Models
 {
-    internal class Resident : HospitalWorker
+    internal class Resident : HospitalWorker, IResident
     {
         private Attending _supervisingAttending;
 
