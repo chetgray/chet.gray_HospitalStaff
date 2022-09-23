@@ -11,15 +11,15 @@ namespace HospitalStaff
             List<IHospitalWorker> staff = new List<IHospitalWorker>();
 
             staff.Add(new Attending { Name = "Richard Srini", EmployeeID = "D94B72E", HireDate = "1996-02-02", Specialty = "Ophthalmology" });
-            staff.Add(new Attending { Name = "Ulric Wong", EmployeeID = "9BFA2B8", HireDate = "1992-08-04", Specialty = "PreventiveMedicine" });
-            staff.Add(new Attending { Name = "Jillian Duran", EmployeeID = "87EBCEC", HireDate = "2003-09-24", Specialty = "Pathology" });
-            staff.Add(new Attending { Name = "Noelle Wu", EmployeeID = "6C8A46A", HireDate = "1999-12-26", Specialty = "NuclearMedicine" });
-            staff.Add(new Attending { Name = "Macey Harris", EmployeeID = "37F895D", HireDate = "2013-06-08", Specialty = "EmergencyMedicine" });
-            staff.Add(new Attending { Name = "Hope Welch", EmployeeID = "B239993", HireDate = "2002-07-23", Specialty = "EmergencyMedicine" });
-            staff.Add(new Attending { Name = "Dale Pacheco", EmployeeID = "46A169E", HireDate = "1994-12-04", Specialty = "AllergyAndImmunology" });
-            staff.Add(new Attending { Name = "Yvette Iba", EmployeeID = "E3369C5", HireDate = "1992-07-13", Specialty = "InternalMedicine" });
-            staff.Add(new Attending { Name = "Simon Bellamy", EmployeeID = "3B79DBB", HireDate = "2012-10-04", Specialty = "EmergencyMedicine" });
-            staff.Add(new Attending { Name = "Charde Ihemeje", EmployeeID = "39DDE44", HireDate = "2003-06-06", Specialty = "MedicalGenetics" });
+            staff.Add(new Attending { Name = "Ulric Wong", EmployeeID = "9BFA2B8", HireDate = "1992-08-04", Specialty = "Preventive Medicine" });
+            staff.Add(new Attending { Name = "Jillian Duran", EmployeeID = "87EBCEC", HireDate = "2003-09-24", Specialty = "Anesthesiology" });
+            staff.Add(new Attending { Name = "Noelle Wu", EmployeeID = "6C8A46A", HireDate = "1999-12-26", Specialty = "Nuclear Medicine" });
+            staff.Add(new Attending { Name = "Macey Harris", EmployeeID = "37F895D", HireDate = "2013-06-08", Specialty = "Emergency Medicine" });
+            staff.Add(new Attending { Name = "Hope Welch", EmployeeID = "B239993", HireDate = "2002-07-23", Specialty = "Emergency Medicine" });
+            staff.Add(new Attending { Name = "Dale Pacheco", EmployeeID = "46A169E", HireDate = "1994-12-04", Specialty = "Neurosurgery" });
+            staff.Add(new Attending { Name = "Yvette Iba", EmployeeID = "E3369C5", HireDate = "1992-07-13", Specialty = "Internal Medicine" });
+            staff.Add(new Attending { Name = "Simon Bellamy", EmployeeID = "3B79DBB", HireDate = "2012-10-04", Specialty = "Emergency Medicine" });
+            staff.Add(new Attending { Name = "Charde Ihemeje", EmployeeID = "39DDE44", HireDate = "2003-06-06", Specialty = "Medical Genetics" });
 
             staff.Add(new Resident { Name = "Abra Mendoza", EmployeeID = "956B46B", HireDate = "2022-07-29", Supervisor = (Attending)staff[0] });
             staff.Add(new Resident { Name = "Christian Inacio", EmployeeID = "8ADF7A7", HireDate = "2020-12-18", Supervisor = (Attending)staff[1] });
@@ -73,7 +73,9 @@ namespace HospitalStaff
                 if (worker is IAttending attending)
                 {
                     Console.Write(
-                        $"  Type: Attending,\tResidents: {attending.SuperviseesCount}"
+                        "  Type: Attending,"
+                            + $"\tSpecialty: {attending.Specialty},"
+                            + $"\tResidents: {attending.SuperviseesCount}"
                     );
                 }
                 if (worker is IResident resident)
