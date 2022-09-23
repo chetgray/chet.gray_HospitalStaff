@@ -2,6 +2,6 @@
 {
     internal interface IResident : IHospitalWorker
     {
-        Attending Supervisor { get; set; }
+        IAttending Supervisor { get; set; }
     }
 }

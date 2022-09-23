@@ -2,9 +2,9 @@
 {
     internal class Resident : HospitalWorker, IResident
     {
-        private Attending _supervisor;
+        private IAttending _supervisor;
 
-        public Attending Supervisor
+        public IAttending Supervisor
         {
             get { return _supervisor; }
             set

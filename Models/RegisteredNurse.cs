@@ -2,9 +2,9 @@
 {
     internal class RegisteredNurse : HospitalWorker, IRegisteredNurse
     {
-        private NurseSupervisor _supervisor;
+        private INurseSupervisor _supervisor;
 
-        public NurseSupervisor Supervisor
+        public INurseSupervisor Supervisor
         {
             get { return _supervisor; }
             set
