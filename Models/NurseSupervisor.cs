@@ -1,4 +1,4 @@
-﻿namespace HospitalStaff
+﻿namespace HospitalStaff.Models
 {
     internal class NurseSupervisor : HospitalWorker
     {
