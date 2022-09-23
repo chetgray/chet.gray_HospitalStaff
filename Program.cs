@@ -53,6 +53,17 @@ namespace HospitalStaff
             staff.Add(new RegisteredNurse { Name = "Lois Green", EmployeeID = "5E9796C", HireDate = "2022-08-30", SupervisingNurseSupervisor = (NurseSupervisor)staff[22] });
             staff.Add(new RegisteredNurse { Name = "Price Aras", EmployeeID = "277AF98", HireDate = "2022-07-21", SupervisingNurseSupervisor = (NurseSupervisor)staff[21] });
 
+            staff.Add(new SurgicalTech { Name = "Vincent Uddin", EmployeeID = "E9A78B7", HireDate = "2020-06-04", Department = "Cardiothoracic Surgery" });
+            staff.Add(new SurgicalTech { Name = "Serena Doğan", EmployeeID = "F6FE462", HireDate = "2021-06-07", Department = "Pediatric Surgery" });
+            staff.Add(new SurgicalTech { Name = "Merrill Patel", EmployeeID = "978E2BB", HireDate = "2020-07-04", Department = "Pediatric Surgery" });
+            staff.Add(new SurgicalTech { Name = "Edward Wagner", EmployeeID = "9595290", HireDate = "2021-05-21", Department = "General Surgery" });
+            staff.Add(new SurgicalTech { Name = "Minerva Wagner", EmployeeID = "6324115", HireDate = "2020-03-13", Department = "General Surgery" });
+            staff.Add(new SurgicalTech { Name = "Caleb Maler", EmployeeID = "A34E5CD", HireDate = "2020-07-04", Department = "Obstetrics and Gynecology" });
+            staff.Add(new SurgicalTech { Name = "Bree Udoka", EmployeeID = "510BB87", HireDate = "2021-06-03", Department = "Gynecologic Oncology" });
+            staff.Add(new SurgicalTech { Name = "Roth Vazquez", EmployeeID = "2D99F45", HireDate = "2021-08-10", Department = "Colon and Rectal Surgery" });
+            staff.Add(new SurgicalTech { Name = "Aurelia Hanson", EmployeeID = "3EC9267", HireDate = "2019-12-12", Department = "Gynecologic Oncology" });
+            staff.Add(new SurgicalTech { Name = "Zelenia Miranda", EmployeeID = "334877A", HireDate = "2020-01-04", Department = "Pediatric Surgery" });
+
             foreach (IHospitalWorker worker in staff)
             {
                 Console.Write(
@@ -80,6 +91,12 @@ namespace HospitalStaff
                 {
                     Console.Write(
                         $"  Type: Registered Nurse,\tSupervisor: {registeredNurse.SupervisingNurseSupervisor.Name}"
+                    );
+                }
+                if (worker is SurgicalTech surgicalTech)
+                {
+                    Console.Write(
+                        $"  Type: Surgical Tech,\tDepartment: {surgicalTech.Department}"
                     );
                 }
                 Console.WriteLine();
