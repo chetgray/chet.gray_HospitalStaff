@@ -2,19 +2,19 @@
 {
     internal class RegisteredNurse : HospitalWorker, IRegisteredNurse
     {
-        private NurseSupervisor _supervisingNurseSupervisor;
+        private NurseSupervisor _supervisor;
 
-        public NurseSupervisor SupervisingNurseSupervisor
+        public NurseSupervisor Supervisor
         {
-            get { return _supervisingNurseSupervisor; }
+            get { return _supervisor; }
             set
             {
-                if (!(_supervisingNurseSupervisor is null))
+                if (!(_supervisor is null))
                 {
-                    SupervisingNurseSupervisor.SupervisedNursesCount--;
+                    Supervisor.SuperviseesCount--;
                 }
-                _supervisingNurseSupervisor = value;
-                SupervisingNurseSupervisor.SupervisedNursesCount++;
+                _supervisor = value;
+                Supervisor.SuperviseesCount++;
             }
         }
     }

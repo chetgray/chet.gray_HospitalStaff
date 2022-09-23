@@ -2,6 +2,6 @@
 {
     internal class NurseSupervisor : HospitalWorker, INurseSupervisor
     {
-        public int SupervisedNursesCount { get; set; }
+        public int SuperviseesCount { get; set; }
     }
 }

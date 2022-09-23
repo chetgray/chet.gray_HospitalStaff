@@ -3,6 +3,6 @@
     internal interface IAttending : IHospitalWorker
     {
         string Specialty { get; set; }
-        int SupervisedResidentsCount { get; set; }
+        int SuperviseesCount { get; set; }
     }
 }

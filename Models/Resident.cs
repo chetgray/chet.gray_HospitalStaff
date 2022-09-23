@@ -2,19 +2,19 @@
 {
     internal class Resident : HospitalWorker, IResident
     {
-        private Attending _supervisingAttending;
+        private Attending _supervisor;
 
-        public Attending SupervisingAttending
+        public Attending Supervisor
         {
-            get { return _supervisingAttending; }
+            get { return _supervisor; }
             set
             {
-                if (!(_supervisingAttending is null))
+                if (!(_supervisor is null))
                 {
-                    SupervisingAttending.SupervisedResidentsCount--;
+                    Supervisor.SuperviseesCount--;
                 }
-                _supervisingAttending = value;
-                SupervisingAttending.SupervisedResidentsCount++;
+                _supervisor = value;
+                Supervisor.SuperviseesCount++;
             }
         }
     }

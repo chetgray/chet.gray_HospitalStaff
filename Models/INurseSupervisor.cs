@@ -2,6 +2,6 @@
 {
     internal interface INurseSupervisor : IHospitalWorker
     {
-        int SupervisedNursesCount { get; set; }
+        int SuperviseesCount { get; set; }
     }
 }

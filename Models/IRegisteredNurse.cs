@@ -2,6 +2,6 @@
 {
     internal interface IRegisteredNurse : IHospitalWorker
     {
-        NurseSupervisor SupervisingNurseSupervisor { get; set; }
+        NurseSupervisor Supervisor { get; set; }
     }
 }
