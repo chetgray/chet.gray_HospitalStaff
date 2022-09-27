@@ -1,7 +1,6 @@
 ﻿namespace HospitalStaff.Models
 {
-    internal interface IResident : IHospitalWorker
+    internal interface IResident : IHospitalWorker, ISupervisee<IAttending>
     {
-        IAttending Supervisor { get; set; }
     }
 }

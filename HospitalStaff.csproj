@@ -50,6 +50,7 @@
     <Compile Include="Models\INurseSupervisor.cs" />
     <Compile Include="Models\IRegisteredNurse.cs" />
     <Compile Include="Models\IResident.cs" />
+    <Compile Include="Models\ISupervisee.cs" />
     <Compile Include="Models\ISurgicalTech.cs" />
     <Compile Include="Models\NurseSupervisor.cs" />
     <Compile Include="Models\RegisteredNurse.cs" />
